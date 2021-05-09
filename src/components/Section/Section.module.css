@@ -1,0 +1,10 @@
+.content {
+}
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+
+  text-align: center;
+  color: #000;
+}

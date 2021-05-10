@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <div className={style.conteiner}>
         <Section title="Please leave feedback">
-          <Statistics
+          <FeedbackOptions
             onGoodIncrement={this.goodIncrement}
             onNeutralIncrement={this.neutralIncrement}
             onBadIncrement={this.badIncrement}
@@ -64,7 +64,7 @@ class App extends Component {
           {total === 0 ? (
             <Notification message="No feedback given"></Notification>
           ) : (
-            <FeedbackOptions
+            <Statistics
               good={good}
               neutral={neutral}
               bad={bad}

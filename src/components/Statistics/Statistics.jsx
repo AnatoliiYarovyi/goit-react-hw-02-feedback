@@ -1,29 +1,25 @@
 import React from "react";
-import PropTypes from "prop-types";
+import ProtType from "prop-types";
 import style from "./Statistics.module.css";
 
-const Statistics = ({
-  onGoodIncrement,
-  onNeutralIncrement,
-  onBadIncrement,
-}) => (
-  <div className={style.boxBtn}>
-    <button className={style.button} type="button" onClick={onGoodIncrement}>
-      Good
-    </button>
-    <button className={style.button} type="button" onClick={onNeutralIncrement}>
-      Neutral
-    </button>
-    <button className={style.button} type="button" onClick={onBadIncrement}>
-      Bad
-    </button>
-  </div>
-);
+const Statistics = ({ good, neutral, bad, total, percentage }) => {
+  return (
+    <ul className={style.list}>
+      <li className={style.item}>Good: {good}</li>
+      <li className={style.item}>Neutral: {neutral}</li>
+      <li className={style.item}>Bad: {bad}</li>
+      <li className={style.item}>Total: {total}</li>
+      <li className={style.item}>Positive feedback: {percentage}%</li>
+    </ul>
+  );
+};
 
-Statistics.propTypes = {
-  onGoodIncrement: PropTypes.func,
-  onNeutralIncrement: PropTypes.func,
-  onBadIncrement: PropTypes.func,
+Statistics.protType = {
+  good: ProtType.number,
+  neutral: ProtType.number,
+  bad: ProtType.number,
+  total: ProtType.number,
+  percentage: ProtType.number,
 };
 
 export default Statistics;
